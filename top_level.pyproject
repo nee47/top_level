@@ -1,3 +1,3 @@
 {
-    "files": ["main.py","qml/login.qml"]
+    "files": ["qml/Login.qml","main.py","qml/MainView.qml","qml/Home.qml"]
 }

@@ -3,7 +3,7 @@ import QtQuick.Window
 import QtQuick.Controls.Material 2.3
 
 Window {
-    id: window
+    id: loginWindow
     width: 410
     height: 600
     visible: true
@@ -12,7 +12,7 @@ Window {
     Material.theme: Material.Dark
     Material.accent: Material.DeepPurple
 
-    flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.Window
 
     Rectangle{
         id: rectangle
@@ -31,8 +31,9 @@ Window {
             anchors.topMargin: 7
             anchors.rightMargin: 7
             onClicked: {
-                window.close()
+                Qt.quit()
             }
+            Material.theme: Material.Light
         }
 
         Image {
@@ -69,10 +70,14 @@ Window {
             id: loginButtons
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: userPasswordInput.bottom
+            anchors.topMargin: 15
             spacing: 13
             Button{
                 id: acceptButton
                 text: qsTr("Aceptar")
+                onClicked: {
+                    loader.setSource("Home.qml")
+                }
 
             }
 
@@ -82,6 +87,5 @@ Window {
 
             }
         }
-
     }
 }
