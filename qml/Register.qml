@@ -61,33 +61,39 @@ Window {
         TextField{
             id: userPasswordInput
             width: parent.width * 0.8
-            placeholderText: qsTr("Password")
+            placeholderText: qsTr("Password...")
             anchors.top: userNameInput.bottom
             anchors.horizontalCenter: parent.horizontalCenter
         }
 
-
+        TextField{
+            id: userPasswordConfirmInput
+            width: parent.width * 0.8
+            placeholderText: qsTr("Confirm Password")
+            anchors.top: userPasswordInput.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
 
         Row{
             id: loginButtons
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: userPasswordInput.bottom
+            anchors.top: userPasswordConfirmInput.bottom
             anchors.topMargin: 15
             spacing: 13
             Button{
                 id: acceptButton
                 text: qsTr("Aceptar")
                 onClicked: {
-                    loader.setSource("Home.qml")
+                    console.log("REGISTRO PERFECTO")
                 }
 
             }
 
             Button{
                 id: registerButton
-                text: qsTr("Registrar")
+                text: qsTr("Volver")
                 onClicked: {
-                    loader.setSource("Register.qml")
+                    loader.setSource("Login.qml")
                 }
             }
         }
